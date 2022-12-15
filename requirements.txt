@@ -1,2 +1,13 @@
 selenium
 webdriver_manager
+pyqt5
+speechrecognition
+pyttsx3
+pyaudio
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+neuralintents
+tk
+customtkinter
+Pillow

@@ -1,6 +1,6 @@
 import time
 
-from selenium import webdriver
+import undetected_chromedriver as uc
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -27,14 +27,7 @@ class ChatGPT:
         self.silent = silent
         self._paragraph_len = 0
 
-        op = webdriver.ChromeOptions()
-        op.add_argument('--log-level=3')
-
-        for option in driver_options:
-            op.add_argument(option)
-
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
-                                       options=op)
+        self.driver = uc.Chrome(service=Service(ChromeDriverManager().install()))
 
     def __repr__(self):
         return self.__class__.__name__
@@ -106,20 +99,26 @@ class ChatGPT:
     @check_attribute('_logged', '_connected')
     def __call__(self,
                  prompt,
-                 answer_wait_time=10,
+                 answer_wait_time=15,
                  format_paragraph=False,
                  sleep_time=None):
         # format for the answer
         prefix = '\n ' if format_paragraph else ''
         # send prompt
         self.driver.find_element(By.TAG_NAME, 'textarea').send_keys(prompt)
-        self.driver.find_elements(By.TAG_NAME, 'button')[-1].click()
+
+        buttons = self.driver.find_elements(By.TAG_NAME, 'button')
+        try:
+            buttons[-1].click()
+        except:
+            pass
         # update control state
         self._first_call = True
         # wait for answer
         time.sleep(answer_wait_time)
         # parse answer
         answer = self._parse_answer(prefix)
+        print(answer)
         return answer
 
     @check_attribute('_logged', '_connected', '_first_call')

@@ -1,0 +1,103 @@
+{
+  "intents": [
+    {
+      "tag": "draft",
+      "patterns": [
+        "Salva la mail nelle bozze",
+        "Drafta il testo",
+        "Ok, manda la mail nelle mie bozze, grazie",
+        "Va bene grazie, salva la mail nelle bozze",
+        "Perfetto, manda la bozza nei draft",
+        "Salva in bozze",
+        "Grazie, salvala nelle bozze"
+      ],
+      "responses": [
+        "Avvio il motore testuale ... Sono in ascolto"
+      ]
+    },
+    {
+      "tag": "attiva text to speech",
+      "patterns": [
+        "Entra in modalità text to speech",
+        "Attiva la modalità text to speech",
+        "Ok, attiva text to speech",
+        "Apri text to speech",
+        "Attiva lettura del testo",
+        "Avvia text to speech",
+        "Puoi avviare la lettura del testo"
+      ],
+      "responses": [
+        "Certo, attivo text to speech",
+        "Ho attivato la modalità text to speech"
+      ]
+    },
+    {
+      "tag": "disattiva text to speech",
+      "patterns": [
+        "disattiva text to speech",
+        "Chiudi text to speech",
+        "Ok, stoppa text to speech",
+        "Puoi disattivare la funzione di text to speech",
+        "Ferma la lettura del testo",
+        "Annulla text to speech",
+        "Grazie, disattiva text to speech"
+      ],
+      "responses": [
+        "Ho disattivato text to speech",
+        "Va bene, disattivo text to speech"
+      ]
+    },
+    {
+      "tag": "set account active",
+      "patterns": [
+        "Imposta aleguss@gmail.com come account attivo",
+        "Puoi utilizzare aleguss@gmail.com come account email",
+        "Potresti impostare alessandro.gussoni@hotmail.com come account attivo",
+        "Manda i draft a usertest@gmail.com grazie",
+        "Manda i draft a usertest@hotmail.it per favore",
+        "Imposta come account attivo alessandro.gussoni@intesasanpaolo.com",
+        "Usa mauro.mauroni@gmail.it come account attivo",
+        "Utilizza sara.saroni@expediagroup.com come account email attivo"
+      ],
+      "responses": [
+        "Ho impostato <masked> come account attivo",
+        "Certo! imposto <masked> come account attivo",
+        "Sto impostando <masked> come account attivo"
+      ]
+    },
+    {
+      "tag": "reset thread",
+      "patterns": [
+        "Resetta il thread della conversazione",
+        "Puoi utilizzare aleguss@gmail.com come account email",
+        "Potresti impostare alessandro.gussoni@hotmail.com come account attivo",
+        "Manda i draft a usertest@gmail.com grazie",
+        "Manda i draft a usertest@hotmail.it per favore",
+        "Imposta come account attivo alessandro.gussoni@intesasanpaolo.com",
+        "Usa mauro.mauroni@gmail.it come account attivo",
+        "Utilizza sara.saroni@expediagroup.com come account email attivo"
+      ],
+      "responses": [
+        "Ho impostato <masked> come account attivo",
+        "Certo! imposto <masked> come account attivo",
+        "Sto impostando <masked> come account attivo"
+      ]
+    },
+    {
+      "tag": "exit",
+      "patterns": [
+        "Stop",
+        "Chiudi applicazione",
+        "Chiuditi",
+        "Stop applicazione",
+        "Fine programma",
+        "Ciao",
+        "Ok grazie chiuditi pure "
+      ],
+      "responses": [
+        "Grazie e alla prossima!"
+      ]
+    }
+
+  ]
+}
